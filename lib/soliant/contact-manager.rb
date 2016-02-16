@@ -1,0 +1,5 @@
+require_relative 'contact-manager/version'
+require_relative 'contact-manager/contact'
+require_relative 'contact-manager/list'
+require_relative 'contact-manager/cli'
+require_relative 'contact-manager/console'
