@@ -1,17 +1,16 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'contact/manager/version'
+require 'soliant/contact-manager/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "contact-manager"
-  spec.version       = Contact::Manager::VERSION
+  spec.name          = "soliant-contact-manager"
+  spec.version       = Soliant::ContactManager::VERSION
   spec.authors       = ["Dane O'Connor"]
   spec.email         = ["dane.oconnor@gmail.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = %q{A simple contact manager}
+  spec.description   = %q{CLI and Repl for querying CSV filled with contacts}
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
@@ -26,6 +25,10 @@ Gem::Specification.new do |spec|
   spec.bindir        = "exe"
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
+
+  spec.add_runtime_dependency "highline"
+  spec.add_runtime_dependency "cli-console"
+  spec.add_runtime_dependency "clamp"
 
   spec.add_development_dependency "bundler", "~> 1.10"
   spec.add_development_dependency "rake", "~> 10.0"
