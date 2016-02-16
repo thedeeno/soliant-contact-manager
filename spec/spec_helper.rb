@@ -1,2 +1,9 @@
-$LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
-require 'contact/manager'
+module Helpers
+  def fixture_path(name)
+    File.expand_path(File.join(__dir__, 'fixtures', name))
+  end
+end
+
+RSpec.configure do |c|
+  c.include Helpers
+end
