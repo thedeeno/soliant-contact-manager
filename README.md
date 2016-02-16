@@ -24,12 +24,12 @@ Once in the REPL type 'help' to see your options.
 
 To find a contact by email type:
 ```sh
-contact-manager > find LisaESauceda@armyspy.com
+$> find LisaESauceda@armyspy.com
 ```
 
 To query contacts for last name starting with letter type:
 ```sh
-contact-manager > query last_name S
+$> query last_name S
 ```
 
 To skip the interactive session, you can call commands directly from the CLI:
