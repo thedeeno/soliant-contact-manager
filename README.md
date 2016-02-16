@@ -1,39 +1,49 @@
-# Contact::Manager
+# Soliant::ContactManager
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/contact/manager`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+A simple contact manager CLI and REPL
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'contact-manager'
+```sh
+git clone https://github.com/thedeeno/soliant-contact-manager
+cd soliant-contact-manager
+bundle install
+rake install
 ```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install contact-manager
 
 ## Usage
 
-TODO: Write usage instructions here
+Use the included CLI to query a CSV file. To start an interactive session with
+the data provided by the client use the following:
 
-## Development
+```
+contact-manager spec/fixtures/contacts.csv start
+```
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake rspec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+Once in the REPL type 'help' to see your options.
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+To find a contact by email type:
+```sh
+contact-manager > find LisaESauceda@armyspy.com
+```
 
-## Contributing
+To query contacts for last name starting with letter type:
+```sh
+contact-manager > query last_name S
+```
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/contact-manager. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
+To skip the interactive session, you can call commands directly from the CLI:
+```sh
+contact-manager spec/fixtures/contacts.csv query last_name S
+```
 
+## Testing
+
+This projects uses rspec for it's test suite. To run type:
+
+```sh
+bundle exec rspec spec
+```
 
 ## License
 
